@@ -1,0 +1,25 @@
+-- V1. Basic Rule-Based
+-- "Show all students with marks above 80."
+SELECT * FROM students WHERE marks > 80;
+
+-- V2. Multi-Condition Queries
+-- "List students older than 20 and with grade A."
+SELECT * FROM students WHERE age > 20 AND grade = 'A';
+
+-- V3. Aggregation Queries
+-- "Find the average marks of students."
+SELECT AVG(marks) FROM students;
+
+-- V4. Sorting Queries
+-- "Show students ordered by marks descending."
+SELECT * FROM students ORDER BY marks DESC;
+
+-- V5. Grouping Queries
+-- "Show average marks by grade."
+SELECT grade, AVG(marks) FROM students GROUP BY grade;
+
+-- V6. Multi-Table Queries (Joins)
+-- "Show student names with their course names."
+SELECT s.name, c.course_name 
+FROM students s 
+JOIN courses c ON s.id = c.student_id;
